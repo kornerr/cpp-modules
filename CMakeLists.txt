@@ -12,4 +12,7 @@ ADD_LIBRARY(core SHARED core/core.cpp)
 # Create executable.
 ADD_EXECUTABLE(cppModules main.cpp)
 # Link executable with core library.
-TARGET_LINK_LIBRARIES(cppModules core)
+TARGET_LINK_LIBRARIES(cppModules core dl)
+
+# Create user library.
+ADD_LIBRARY(user MODULE user/user.cpp)
