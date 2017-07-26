@@ -13,7 +13,7 @@ typedef void * Module;
 typedef void ModuleFunction();
 
 Module loadModule(const std::string &fileName);
-void unloadModule(Module module);
+void unloadModule(const std::string &fileName, Module module);
 
 } // namespace core
 } // namespace cppmodules

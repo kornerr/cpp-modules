@@ -29,7 +29,7 @@ Module loadModule(const std::string &fileName)
             INIT_FUNCTION.c_str(),
             fileName.c_str(),
             possibleError.c_str());
-        unloadModule(module);
+        unloadModule(fileName, module);
         return 0;
     }
     ModuleFunction *init =
@@ -38,7 +38,7 @@ Module loadModule(const std::string &fileName)
     (*init)();
 }
 
-void unloadModule(Module module)
+void unloadModule(const std::string &fileName, Module module)
 {
     // Get deinit function.
     const std::string DEINIT_FUNCTION = "cppmoduleDeinit";
@@ -47,9 +47,9 @@ void unloadModule(Module module)
     if (!possibleError.empty())
     {
         printf(
-            "ERROR. Could not find function '%s' inside module file 'TODO': '%s'\n",
+            "ERROR. Could not find function '%s' inside module file '%s': '%s'\n",
             DEINIT_FUNCTION.c_str(),
-            //fileName.c_str(),
+            fileName.c_str(),
             possibleError.c_str());
     }
     // Call deinit function if it's present.
