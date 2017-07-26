@@ -1,15 +1,18 @@
 
 #include "user.h"
+#include "userdeps.h"
 
 #include <cstdio>
 
 void cppmoduleInit()
 {
-    printf("User.Init. TODO: use other lib\n");
+    cppmodules::userdeps::UserDeps ud;
+    ud.printInit();
 }
 
 void cppmoduleDeinit()
 {
-    printf("User.Deinit. TODO: use other lib\n");
+    cppmodules::userdeps::UserDeps ud;
+    ud.printDeinit();
 }
 
