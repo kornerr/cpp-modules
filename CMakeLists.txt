@@ -8,7 +8,12 @@ ADD_DEFINITIONS("-std=c++11")
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
 
 # Create core library.
-ADD_LIBRARY(core SHARED core/library.cpp)
+ADD_LIBRARY(
+    core
+    SHARED
+    core/library.cpp
+    core/print.cpp
+)
 # Create executable.
 ADD_EXECUTABLE(cppModules main.cpp)
 # Link executable with core library.

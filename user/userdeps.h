@@ -2,6 +2,8 @@
 #ifndef CPP_MODULES_USER_DEPS_H
 #define CPP_MODULES_USER_DEPS_H
 
+#include "core/print.h"
+
 #include <cstdio>
 
 //#define USE_ALTERNATIVE
@@ -14,6 +16,7 @@ class UserDeps
     public:
         void printDeinit()
         {
+            core::print::printFancyInt(44);
 #ifdef USE_ALTERNATIVE
             printf("UserDeps.printDeinit. ALTERNATIVE\n");
 #else
@@ -22,6 +25,7 @@ class UserDeps
         }
         void printInit()
         {
+            core::print::printFancyInt(24);
 #ifdef USE_ALTERNATIVE
             printf("UserDeps.printInit. ALTERNATIVE\n");
 #else
