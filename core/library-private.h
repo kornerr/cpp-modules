@@ -14,7 +14,7 @@ bool findFunction(
     const char *fileName,
     Library library,
     const char *functionName,
-    LibraryFunction *function)
+    LibraryFunction **function)
 {
     void *rawfunc = dlsym(library, functionName);
     const char *error = dlerror();
@@ -27,8 +27,7 @@ bool findFunction(
             error);
         return false;
     }
-    function = reinterpret_cast<LibraryFunction *>(rawfunc);
-    printf("function: '%p'\n", function);
+    *function = reinterpret_cast<LibraryFunction *>(rawfunc);
     return true;
 }
 
