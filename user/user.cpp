@@ -6,6 +6,7 @@
 
 void cppmoduleInit()
 {
+    printf("01.cppmoduleInit\n");
     cppmodules::userdeps::UserDeps ud;
     ud.printInit();
 }
