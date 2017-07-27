@@ -20,4 +20,9 @@ ADD_EXECUTABLE(cppModules main.cpp)
 TARGET_LINK_LIBRARIES(cppModules core dl)
 
 # Create user library.
-ADD_LIBRARY(user MODULE user/user.cpp)
+ADD_LIBRARY(
+    user
+    MODULE
+    user/user.cpp
+    user/coreext.cpp
+)

@@ -9,33 +9,35 @@
 //#define USE_ALTERNATIVE
 
 namespace cppmodules {
-namespace userdeps {
+namespace user {
+namespace deps {
 
-class UserDeps
+class Deps
 {
     public:
         void printDeinit()
         {
             core::print::printFancyInt(44);
 #ifdef USE_ALTERNATIVE
-            printf("UserDeps.printDeinit. ALTERNATIVE\n");
+            printf("Deps.printDeinit. ALTERNATIVE\n");
 #else
-            printf("UserDeps.printDeinit.\n");
+            printf("Deps.printDeinit.\n");
 #endif
         }
         void printInit()
         {
             core::print::printFancyInt(24);
 #ifdef USE_ALTERNATIVE
-            printf("UserDeps.printInit. ALTERNATIVE\n");
+            printf("Deps.printInit. ALTERNATIVE\n");
 #else
-            printf("UserDeps.printInit.\n");
+            printf("Deps.printInit.\n");
 #endif
         }
 
 };
 
-} // namespace userdeps
+} // namespace deps
+} // namespace user
 } // namespace cppmodules
 
 #endif // CPP_MODULES_USER_DEPS_H

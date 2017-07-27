@@ -1,18 +1,22 @@
 
 #include "user.h"
-#include "userdeps.h"
+#include "deps.h"
+
+#include "coreext.h"
 
 #include <cstdio>
 
 void cppmoduleInit()
 {
-    cppmodules::userdeps::UserDeps ud;
-    ud.printInit();
+    cppmodules::user::deps::Deps d;
+    d.printInit();
+    cppmodules::core::print::printFancyString("cppmoduleInit");
 }
 
 void cppmoduleDeinit()
 {
-    cppmodules::userdeps::UserDeps ud;
-    ud.printDeinit();
+    cppmodules::user::deps::Deps d;
+    d.printDeinit();
+    cppmodules::core::print::printFancyString("cppmoduleDeinit");
 }
 
