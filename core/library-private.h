@@ -27,7 +27,6 @@ bool findFunction(
             error);
         return false;
     }
-    printf("rawfunc: '%p'\n", rawfunc);
     function = reinterpret_cast<LibraryFunction *>(rawfunc);
     printf("function: '%p'\n", function);
     return true;

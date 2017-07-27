@@ -25,10 +25,11 @@ Library load(const char *fileName)
 
     printf("03.load\n");
     // Call init function if it's found.
-    LibraryFunction *init;
+    LibraryFunction *init = 0;
+    printf("03.0.load. init: '%p'\n", init);
     if (findFunction(fileName, library, "cppmoduleInit", init))
     {
-        printf("03.1.load\n");
+        printf("03.1.load. init: '%p'\n", init);
         (*init)();
         printf("03.2.load\n");
         return library;
