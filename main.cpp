@@ -1,5 +1,5 @@
 
-#include "core.h"
+#include "core/library.h"
 
 using namespace cppmodules;
 
@@ -9,13 +9,13 @@ int main(int argc, char *argv[])
 
     const std::string fileNameUser = "libuser.so";
 
-    core::Module module = 0;
+    core::library::Library library;
 
     // First time.
-    module = core::loadModule(fileNameUser);
-    if (module)
+    library = core::library::load(fileNameUser.c_str());
+    if (library)
     {
-        core::unloadModule(fileNameUser, module);
+        core::library::unload(fileNameUser.c_str(), library);
     }
 
     printf("Paused. Change user library dependency, rebuild, and then press Enter\n");
@@ -24,10 +24,10 @@ int main(int argc, char *argv[])
 
 
     // Second time.
-    module = core::loadModule(fileNameUser);
-    if (module)
+    library = core::library::load(fileNameUser.c_str());
+    if (library)
     {
-        core::unloadModule(fileNameUser, module);
+        core::library::unload(fileNameUser.c_str(), library);
     }
 
     return 0;
